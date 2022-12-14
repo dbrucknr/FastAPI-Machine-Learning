@@ -1,9 +1,5 @@
 from fastapi import FastAPI
+from src.system import system
 
 app = FastAPI()
-
-@app.get("/")
-async def main():
-    return {
-        "active": True
-    }
+app.include_router(system.router)
