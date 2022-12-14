@@ -8,7 +8,8 @@ router = APIRouter()
     summary="Retrieve system state.",
     description="""
         Used to extract system environment variables.
-    """
+    """,
+    tags=["Configuration"]
 )
 async def main(settings: Settings = Depends(get_settings)):
     return settings
